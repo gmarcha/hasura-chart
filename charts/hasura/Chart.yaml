@@ -4,7 +4,7 @@ description: An Hasura application
 
 type: application
 
-version: 0.0.2
+version: 0.1.0
 appVersion: "2.11.10"
 
 dependencies:
