@@ -18,6 +18,18 @@ helm repo add gmarcha https://gmarcha.github.io/hasura-chart/
 helm install hasura gmarcha/hasura
 ```
 
+# Tutorials
+
+Use bash scripts in `/scripts/install` to install required tools:
+- `bash scripts/install/helm.sh` to install `helm` cli,
+- `bash scripts/install/kubectl.sh` to install `kubectl` cli (optional),
+- `bash scripts/install/k3d.sh` to install `k3d` cli (optional)
+- `bash scripts/install/docker.sh` to install `docker` for `k3d` usage.
+
+Use scripts in `/scripts/cluster` to run a k3d cluster:
+- `bash scripts/cluster/create.sh` to create a cluster running on docker containers,
+- `bash scripts/cluster/delete.sh` to delete cluster.
+
 ## Author
 
 [@gmarcha](https://github.com/gmarcha)
