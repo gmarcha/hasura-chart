@@ -8,8 +8,7 @@ jobs:
   release-charts:
 
     permissions:
-      contents: read
-      packages: write
+      contents: write
 
     runs-on: ubuntu-latest
     steps:
