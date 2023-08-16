@@ -9,7 +9,7 @@ An Helm chart to deploy Hasura.
 Once Helm has been set up correctly, add the repo as follows:
 
 ```bash
-helm repo add gmarcha https://gmarcha.github.io/helm-charts
+helm repo add gmarcha https://gmarcha.github.io/hasura-chart
 ```
 
 If you had already added this repo earlier, run `helm repo update` to retrieve the latest versions of the packages.  You can then run `helm search repo gmarcha` to see the charts.
