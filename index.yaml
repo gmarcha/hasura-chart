@@ -3,6 +3,24 @@ entries:
   hasura:
   - apiVersion: v2
     appVersion: 2.11.10
+    created: "2023-08-16T17:21:37.585102562Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.8.0
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.8.2
+    description: An Hasura application
+    digest: 20ef57d816c9e91c347919fbc437eb1eec645f6a2199fb659c9108b5e8852936
+    name: hasura
+    type: application
+    urls:
+    - https://github.com/gmarcha/hasura-chart/releases/download/hasura-0.1.0/hasura-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
+    appVersion: 2.11.10
     created: "2023-08-16T17:09:55.111044339Z"
     dependencies:
     - name: common
@@ -19,4 +37,4 @@ entries:
     urls:
     - https://github.com/gmarcha/hasura-chart/releases/download/hasura-0.0.2/hasura-0.0.2.tgz
     version: 0.0.2
-generated: "2023-08-16T17:09:55.111054239Z"
+generated: "2023-08-16T17:21:37.585118362Z"
