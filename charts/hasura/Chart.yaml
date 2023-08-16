@@ -1,0 +1,17 @@
+apiVersion: v2
+name: hasura
+description: An Hasura application
+
+type: application
+
+version: 0.0.1
+appVersion: "2.11.10"
+
+dependencies:
+  - name: common
+    version: 2.8.0
+    repository: https://charts.bitnami.com/bitnami
+  - name: postgresql
+    version: 12.8.2
+    repository: "https://charts.bitnami.com/bitnami"
+    condition: postgresql.enabled

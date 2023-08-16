@@ -1,0 +1,9 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ include "common.names.fullname" . }}
+  namespace: {{ .Release.Namespace | quote }}
+rules:
+- apiGroups: [""]
+  resources: ["pods", "services", "ingresses"]
+  verbs: ["get", "list", "watch"]

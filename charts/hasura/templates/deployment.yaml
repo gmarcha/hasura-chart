@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "common.names.fullname" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels: {{- include "common.labels.standard" . | nindent 4 }}
+    {{- if .Values.commonLabels }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 4 }}
+    {{- end }}
+    hasuraService: custom
+  {{- if .Values.commonAnnotations }}
+  annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
+  {{- end }}
+spec:
+  selector:
+    matchLabels: {{- include "common.labels.matchLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels: {{- include "common.labels.standard" . | nindent 8 }}
+        {{- if .Values.podLabels }}
+        {{- include "common.tplvalues.render" (dict "value" .Values.podLabels "context" $) | nindent 8 }}
+        {{- end }}
+      {{- if .Values.podAnnotations }}
+      annotations:
+        {{- include "common.tplvalues.render" (dict "value" .Values.podAnnotations "context" $) | nindent 8 }}
+      {{- end }}
+    spec:
+      serviceAccountName: {{ include "common.names.fullname" . }}
+      containers:
+      - name: hasura
+        image: {{ .Values.image.name | quote }}
+        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+        env:
+        - name: HASURA_GRAPHQL_DATABASE_URL
+          value: {{ .Values.server.databaseURL }}
+        - name: HASURA_GRAPHQL_ENABLE_CONSOLE
+          value: {{ ternary "true" "false" .Values.server.console | quote }}
+        - name: HASURA_GRAPHQL_DEV_MODE
+          value: {{ ternary "true" "false" .Values.server.devMode | quote }}
+        ports:
+        - name: http
+          containerPort: 8080
+        resources: {}
