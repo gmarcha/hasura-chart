@@ -2,23 +2,29 @@
 
 A Helm chart to deploy a Hasura application on Kubernetes.
 
-# Example
+[![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/docs/home/)
+[![Helm](https://img.shields.io/badge/helm-%23267a9e.svg?style=for-the-badge&logo=helm&logoColor=white)](https://helm.sh/docs/)
+[![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)](https://graphql.org/learn/)
+[![Hasura](https://img.shields.io/badge/Hasura-%231eb5d4.svg?style=for-the-badge&logo=graphql&logoColor=white)](https://hasura.io/docs/latest/index/)
+[![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/docs/current/index.html)
 
-[![Landing page](.github/assets/kubernetes-resources.png)](https://gmarcha.com)
+## Example
 
-# Requirements
+[![Landing page](.github/assets/kubernetes-resources.png)](https://gmarcha.github.io/hasura-chart/ )
+
+## Requirements
 
 - install `helm`,
 - a running kubernetes cluster (see `/scripts`).
 
-# Usage
+## Usage
 
 ```bash
 helm repo add gmarcha https://gmarcha.github.io/hasura-chart/
 helm install hasura gmarcha/hasura
 ```
 
-# Tutorials
+## Tutorials
 
 Use bash scripts in `/scripts/install` to install required tools:
 - `bash scripts/install/helm.sh` to install `helm` cli,
@@ -29,6 +35,12 @@ Use bash scripts in `/scripts/install` to install required tools:
 Use scripts in `/scripts/cluster` to run a k3d cluster:
 - `bash scripts/cluster/create.sh` to create a cluster running on docker containers,
 - `bash scripts/cluster/delete.sh` to delete cluster.
+
+## Hasura
+
+Hasura is a graphql engine which allows to generate a full-featured graphql server from postgres database schemas. Server handles queries, mutations and subscriptions out-of-the-box.
+
+It also provides features to handle SQL migrations, fined-grained authorization on a row-level and open-api federation service. Nevertheless it doesn't support well graphql federation service, Postgraphile with graphql-mesh is better suited for this purpose.
 
 ## Author
 
