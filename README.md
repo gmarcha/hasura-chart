@@ -32,7 +32,7 @@ Use bash scripts in `/scripts/install` to install required tools:
 - `bash scripts/install/k3d.sh` to install `k3d` cli (optional)
 - `bash scripts/install/docker.sh` to install `docker` for `k3d` usage.
 
-Use scripts in `/scripts/cluster` to run a local k3d cluster for testing purpose:
+Use scripts in `/scripts/cluster` to run a local k3d cluster for development and testing purposes:
 - `bash scripts/cluster/create.sh` to create a cluster running on docker containers,
 - `bash scripts/cluster/delete.sh` to delete cluster.
 
