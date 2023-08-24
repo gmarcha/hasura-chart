@@ -1,13 +1,18 @@
 image:
-  name: hasura/graphql-engine:v2.11.10
+  name: hasura/graphql-engine:v2.32.1
   pullPolicy: IfNotPresent
+podLabels:
+  app: hasura
+  version: 2.32.1
 server:
   databaseURL: postgres://hasura:password@hasura-postgresql.default:5432/hasura
   console: true
   devMode: true
-podLabels:
-  app: hasura
-  version: 2.11.10
+hostAliases: []
+securityContext:
+  enabled: true
+  runAsUser: 1001
+  runAsNonRoot: true
 service:
   port: 80
   type: ClusterIP
