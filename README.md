@@ -30,6 +30,7 @@ Run chart locally for development purpose:
 ```bash
 git clone https://github.com/gmarcha/hasura-chart
 cd hasura-chart
+helm dependency build ./charts/hasura
 helm install hasura ./charts/hasura
 ```
 
