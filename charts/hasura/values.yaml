@@ -20,6 +20,17 @@ ingress:
   pathType: ImplementationSpecific
   servicePort: 80
   tls: false
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 80
 postgresql:
   enabled: true
   auth:
