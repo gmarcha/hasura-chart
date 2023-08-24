@@ -1,6 +1,6 @@
 apiVersion: v2
 name: hasura
-description: An Hasura application
+description: Hasura application based on Hasura GraphQL Engine and Postgres images
 
 type: application
 
